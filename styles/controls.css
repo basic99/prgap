@@ -1,0 +1,24 @@
+th {
+   font-weight: bold;
+   text-align:center;
+}
+
+body {
+   font-family:sans-serif;
+}
+
+td {
+   text-align: center;
+}
+
+#cntrls3 td {
+   font-size: 0.8em;
+   text-align: center;
+            
+}
+#cntrls3 th {
+   font-size: 0.9em;
+   text-align: center;
+   font-weight:bold;
+           
+}

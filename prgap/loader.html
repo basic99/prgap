@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style type="text/css">
+  </style>
+  <script language="javascript" type="text/javascript">
+  // <!--
+
+  function find_height(){
+     if (window.innerHeight)
+     return window.innerHeight;
+     if (document.body.clientHeight)
+     return document.body.clientHeight;
+     return 400;
+  }
+  function find_width(){
+     if (window.innerWidth)
+     return window.innerWidth;
+     if (window.document.body.clientWidth)
+     return window.document.body.clientWidth;
+     return 400;
+  }
+
+  function start() {
+     document.getElementById('getwin_w').value = win_w;
+     document.getElementById('getwin_h').value = win_h;
+     document.getElementById('getwin_size').value = size;
+     document.forms[0].submit();
+  }
+  function start_map(){
+     var win_h = find_height() - 69;
+     var win_w = find_width();
+     if (win_h%2 == 1) win_h = win_h -1;
+     if (win_w%2 == 1) win_w = win_w -1;
+     //document.write("height is "+h+"<br>width is "+w);
+      var size = Math.min(win_w, win_h);
+     // if (size%2 == 1) size = size +1;
+      //document.write( "window height is "+win_h+"<br>window width is "+win_w
+        // +"window size is "+size);
+     document.getElementById('getwin_w').value = win_w;
+     document.getElementById('getwin_h').value = win_h;
+     document.getElementById('getwin_size').value = size;
+     document.forms[0].submit();
+     //alert('stop here');
+
+  }
+  // -->
+  </script>
+</head>
+<body onload="start_map()"  >
+<FORM action="map.php" method="post" target="_self" id="runmap">
+      <INPUT type="hidden" name="win_w"  id="getwin_w">
+      <INPUT type="hidden" name="win_h" id="getwin_h">
+      <INPUT type="hidden" name="win_size" id="getwin_size">
+   </FORM>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+#toolbar {
+   position:absolute;
+   height: 69px;
+   background-color: #6586AC;
+   background-image: url(/graphics/prgap/OG_COOPERATORS_bluey.png);
+   background-repeat: no-repeat;
+   background-attachment: scroll;
+   background-position: right;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   margin: 0px;
+   width: 100%;
+   z-index: 10;
+}
+/*
+#query_mesg {
+   position: absolute;
+   top:5px;
+   right:15%;
+   font-family:sans-serif;
+   font-size: small;
+}
+*/
+          

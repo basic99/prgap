@@ -1,0 +1,47 @@
+/*
+stylesheet adopted from example at
+http://alistapart.com/articles/taminglists/
+*/
+
+#tabs {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: white;
+        padding: 6px;
+        border-bottom: 1px solid #aaaaaa;
+        margin-bottom: 10px;
+        font-size: .7em;
+        width: 450px;
+        z-index: 10;      
+        }
+
+#tabs ul {
+        margin-left: 0;
+        padding-left: 0;
+        display: inline;
+        } 
+
+#tabs ul li {
+        margin-left: 5px;
+        margin-bottom: 0;
+        padding: 2px 15px 5px;
+        border: 1px solid #000;
+        list-style: none;
+        display: inline;
+        background-color: #d3d3d3;
+        }
+        
+                
+#tabs ul li.here {
+        border-bottom: 2px solid #ffe;
+        list-style: none;
+        display: inline;
+        background-color: white;
+        }
+
+
+#tabs a {
+   text-decoration:none;
+   color: black;
+   }
