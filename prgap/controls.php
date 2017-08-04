@@ -2,24 +2,24 @@
 require('pr_config.php');
 pg_connect($pg_connect);
 
-require_once 'Zend/Loader.php';
-Zend_Loader::loadClass('Zend_Cache');
-try{
-   $frontendOptions = array(
-      'lifetime' => 604800, // cache lifetime forever
-      'automatic_serialization' => true
-   );
-   $backendOptions = array(
-       'cache_dir' => '../../temp/' // Directory where to put the cache files
-   );
-   // getting a Zend_Cache_Core object
-   $cache = Zend_Cache::factory('Output',
-                                'File',
-                                $frontendOptions,
-                                $backendOptions);
-} catch(Exception $e) {
-  echo $e->getMessage();
-}
+// require_once 'Zend/Loader.php';
+// Zend_Loader::loadClass('Zend_Cache');
+// try{
+//    $frontendOptions = array(
+//       'lifetime' => 604800, // cache lifetime forever
+//       'automatic_serialization' => true
+//    );
+//    $backendOptions = array(
+//        'cache_dir' => '../../temp/' // Directory where to put the cache files
+//    );
+//    // getting a Zend_Cache_Core object
+//    $cache = Zend_Cache::factory('Output',
+//                                 'File',
+//                                 $frontendOptions,
+//                                 $backendOptions);
+// } catch(Exception $e) {
+//   echo $e->getMessage();
+// }
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -41,7 +41,7 @@ try{
 body {padding: 0px; margin: 2px;}
 #tabs {font-size: 11px; width: 315px;}
 #tabs-1, #tabs-3{overflow: scroll;  width: 270px; font-size: 16px;}
-#tabs-2 {overflow: scroll;  width: 298px; font-size: 16px; } 
+#tabs-2 {overflow: scroll;  width: 298px; font-size: 16px; }
 #tabs-2cont {padding-bottom: 0px;}
 
 #pre_btns {font-size: 11px; padding-bottom: 20px;}
@@ -58,11 +58,11 @@ button {width: 90px;}
 $(function() {
    $( "#tabs" ).tabs();
    $("button").button();
-   
+
    var win_h = $(window).height();
    $("#tabs-1,#tabs-3").height(win_h - 78);
    $("#tabs-2").height(win_h - 104);
-   
+
    $("#aoi_reset").click(function(evt) {
       evt.preventDefault();
       pre_reset();
@@ -91,7 +91,7 @@ $(function() {
       document.getElementById('cust').style.display = 'none';
       //set_tab2();
       pre_start();
-      
+
    });
 });
 /* ]]> */
@@ -138,7 +138,7 @@ $(function() {
 </div>
 <div id="tabs-2cont">
 <div id="cont2">
-   
+
 <div id="pre_btns" >
 <button id="aoi_reset">&nbsp;Reset&nbsp;&nbsp;</button>
 <button id="aoi_submit">Submit</button>
@@ -148,7 +148,7 @@ $(function() {
 
 
 <div id="tabs-2">
-   
+
 <input type="checkbox"  name="ecosys" style="margin-left:4px;" onclick="add_ecosys()"/><span>full extent</span>
 
 <ul class="aqtree3clickable">
@@ -264,7 +264,7 @@ while ($row = pg_fetch_array($result)){
    <button id="predef">Predefined</button>
 
 
-<p>Click on the map to locate the starting point. Move the cursor to the second point and click again. 
+<p>Click on the map to locate the starting point. Move the cursor to the second point and click again.
 Continue in this fashion until the polygon describes the AOI. To start over click reset, or to submit AOI click submit. </p>
 
 <p>Create an AOI by <a href="javascript:upload();">uploading</a> a user Shapefile.</p>
@@ -274,7 +274,7 @@ Continue in this fashion until the polygon describes the AOI. To start over clic
 </form>
 
 <div id="tabs-3">
-   
+
 <h4><a href="#lcov_smpl">General Land Cover</a></h4>
 <h4><a href="#lcov">GAP Land Cover</a></h4>
 <h4><a href="#owner">Ownership (Stewardship)</a></h4>
@@ -314,7 +314,7 @@ Continue in this fashion until the polygon describes the AOI. To start over clic
 <img alt="legend" src="/graphics/prgap/pr_status_ms.png" />
 <br />
 </div>
-</div>		 
+</div>
 
 
 </body>
