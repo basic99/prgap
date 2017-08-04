@@ -1,28 +1,107 @@
 MAP
-    NAME "Hello World"
-    SIZE 400 300
-    IMAGECOLOR 249 245 186
-    IMAGETYPE png
-    EXTENT -1.0 -1.0 1.0 1.0
-   # WEB
-    #     TEMPLATE "/var/www/htdocs/hello.html"
-    #     IMAGEPATH "/var/www/htdocs/tmp/"
-    #     IMAGEURL "/tmp/"
-    #END
-    LAYER
-         STATUS default
-         TYPE point
-         FEATURE
-              POINTS  0.00 0.00 END
-              TEXT "Hello World"
-         END # end feature
-         CLASS
-              STYLE
-                   COLOR 255 0 0
-              END
-              LABEL
-                   TYPE bitmap
-              END
+     NAME "Hello World"
+     SIZE 400 300
+    FONTSET '/var/www/html/ncgap/myfonts.txt'
+    IMAGETYPE AGGA
+     #IMAGETYPE png
+      EXTENT         124005  4845  935385 318165
+     CONFIG PROJ_LIB "/usr/local/share/proj/"
+
+
+     LAYER
+          STATUS off
+          TYPE point
+          FEATURE
+               POINTS  0.00 0.00 END
+               TEXT "Hello World"
+          END # end feature
+          CLASS
+               STYLE
+                    COLOR 255 0 0
+               END
+               LABEL
+                    TYPE bitmap
+               END
+          END
+     END
+
+       OUTPUTFORMAT
+         NAME 'AGGA'
+         DRIVER AGG/PNG
+         IMAGEMODE RGB
+         FORMATOPTION "INTERLACE=OFF"
+       END
+
+       OUTPUTFORMAT
+         NAME mypng
+         DRIVER "GD/PNG"
+         MIMETYPE "image/png"
+         IMAGEMODE rgba
+         EXTENSION "png"
+         TRANSPARENT ON
+        END
+
+        OUTPUTFORMAT
+         NAME pdfpng
+         DRIVER "GD/PNG"
+         MIMETYPE "image/png"
+         IMAGEMODE rgb
+         EXTENSION "png"
+         FORMATOPTION "INTERLACE=OFF"
+        END
+
+         SYMBOL
+         NAME 'hatch-lines'
+         TYPE HATCH
+       END
+
+       SYMBOL
+         NAME 'hatch-pattern'
+         TYPE  vector
+         POINTS
+           5 5
+           6 5
+           6 6
+           5 6
+           5 5
+           -1 -1
+           15 15
+           16 15
+           16 16
+           15 16
+           15 15
          END
-    END
+       END
+
+
+         REFERENCE
+            IMAGE   '/var/www/html/data/prgap/pr_ref.png'
+            SIZE  142 165
+            EXTENT 39084.500 205175.500 328284.500 277070.500
+            STATUS ON
+            COLOR -1 -1 -1
+          END
+
+     LAYER
+         NAME      landcover
+        DATA    "/var/www/html/data/prgap/lc_simp_prgap.tif"
+         STATUS    on
+         TYPE      RASTER
+         TEMPLATE "dummy.html"
+       END
+
+        LAYER
+         NAME    elevation
+        DATA    "/var/www/html/data/prgap/PR_Hillshade_3.gtif"
+         STATUS   off
+         TYPE     raster
+       END
+
+       LAYER
+         NAME    mapcalc
+         DATA    ""
+         STATUS   off
+         TYPE     raster
+         debug on
+       END
 END

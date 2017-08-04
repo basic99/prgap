@@ -103,14 +103,14 @@ MAP
   #################################################################################################################
   ### layer definitions
   #### background raster
-  LAYER
-    NAME    landcover
-    DATA    "/pub/grass/puerto_rico/PERMANENT/cellhd/pr_lcov"
+  #LAYER
+   # NAME    landcover
+   # DATA    "/pub/grass/puerto_rico/PERMANENT/cellhd/pr_lcov"
     #DATA    "/data/puerto_rico/PERMANENT/cellhd/pr_lcov"
-    STATUS   off
-    TYPE     raster
-    TEMPLATE "dummy.html"
-  END
+  #  STATUS   off
+  #  TYPE     raster
+  #  TEMPLATE "dummy.html"
+  #END
 
   LAYER
     NAME    elevation
