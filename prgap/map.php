@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
  * One of 2 pages that displays map in frame map.
- * 
+ *
  * Page is initially loaded from loader.html in same frame that gets frame size.
  * Toolbar has buttons that call javascript functions in javascript/buttons.js.
  * Create new map object from $map = ms_newMapObj($mapfile) using prgap.map.
@@ -9,7 +9,7 @@
  * Use setFilter  to display red cross hatch over selected predefined AOI selections.
  * Use javascript library by  Walter Zorn to draw custom AOI and zoom box.
  * To submit new AOI to map2.php change action of form fm1 from map.php to map2.php.
- * 
+ *
  * @package prgap
  */
 
@@ -27,7 +27,7 @@ $user_name = $_SESSION['username'];
 
 <head>
 <title>map page</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="StyleSheet" href="/prgap/styles/map.css" type="text/css" />
 
@@ -50,7 +50,7 @@ $user_name = $_SESSION['username'];
 var curr_user_win;
 $(function() {
 		  setmapctls();
-		 
+
 		  document.getElementById('dragMap').ondragstart = function() {return false;};
 		  start_map();
 		  pan();
@@ -145,7 +145,7 @@ function send_ajax(){
 		}
 	});
 	//check for mapobj create failure after 2 seconds and if fail resubmit ajax
-	
+
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
@@ -154,7 +154,7 @@ function send_ajax(){
 			dataType: "json",
 			success: function(data){//alert(data);
 				if(data.check == "failure"){
-					send_ajax();
+					//send_ajax();
 				}
 			}
 		});
@@ -207,7 +207,7 @@ document.getElementById('loader_gif').style.left = (find_width()/2 -110) +"px";
 
 <div id="toolbar" style="display: block;" >
 <table>
-<tr> 
+<tr>
 <td><input  type="image" src="/graphics/prgap/mag_plus_up.png" id="zmin" title="Zoom In" onclick="zoom_in()" /> </td>
 <td><input  type="image" src="/graphics/prgap/mag_minus_up.png" id="zmout" title="Zoom Out" onclick="zoom_out()" /> </td>
 <td><input  type="image" src="/graphics/prgap/pan_up.png" id="pn" title="Pan" onclick="pan()" /> </td>
@@ -230,7 +230,7 @@ document.getElementById('loader_gif').style.left = (find_width()/2 -110) +"px";
 <td><input type="image" src="/graphics/prgap/pdf_up.png" title="export pdf" onclick="export_pdf();" /> </td>
 <td><input type="image" src="/graphics/prgap/help_up.png" title="Help" onclick="help();" /> </td>
 <td colspan="1">
-	
+
 <select name="query" id="query_item"   style="width: 150px;">
 <option value="stew_area" >parcel name</option>
 <option value="mgmt_name">manage gen.</option>
@@ -299,41 +299,41 @@ sprintf("%3.6f",$old_extent->maxy);
 -->
 
 <div id="myMap" style="position:absolute; top:69px; left:0px; " >
-<img alt="1"  class="mapimage" src="" /> 
+<img alt="1"  class="mapimage" src="" />
 </div>
 
 <div id="dragMap" style="position:absolute; top:69px; left:0px;"     >
-<img alt="2"  class="mapimage" src="" /> 
+<img alt="2"  class="mapimage" src="" />
 </div>
 
 <div id="ctls" style="position:absolute; top:69px; left:0px; z-index: 999;" >
-		  
+
 <div id="panup" style="position:absolute; left: 13px; top: 4px; width: 18px; height: 18px; z-index: 1004;">
 <img src="/graphics/openlayers/north-mini.png" />
 </div>
 
 <div id="panleft" style="position:absolute; left: 4px; top: 22px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/west-mini.png" />  
+<img src="/graphics/openlayers/west-mini.png" />
 </div>
 
 <div id="panright" style="position:absolute; left: 22px; top: 22px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/east-mini.png" />  
+<img src="/graphics/openlayers/east-mini.png" />
 </div>
 
 <div id="pandown" style="position:absolute; left: 13px; top: 40px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/south-mini.png" />  
+<img src="/graphics/openlayers/south-mini.png" />
 </div>
 
 <div id="zoomin" style="position:absolute; left: 13px; top: 63px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/zoom-plus-mini.png" />  
+<img src="/graphics/openlayers/zoom-plus-mini.png" />
 </div>
 
 <div id="zoommax" style="position:absolute; left: 13px; top: 81px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/zoom-world-mini.png" />  
+<img src="/graphics/openlayers/zoom-world-mini.png" />
 </div>
 
 <div id="zoomout" style="position:absolute; left: 13px; top: 99px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/zoom-minus-mini.png" />  
+<img src="/graphics/openlayers/zoom-minus-mini.png" />
 </div>
 
 </div>
