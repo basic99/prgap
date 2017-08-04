@@ -3,6 +3,13 @@
 //date_default_timezone_set("America/New_York");
 require("pr_config.php");
 pg_connect($pg_connect);
+
+// ini_set("log_errors", 1);
+ini_set("display_errors", 0);
+ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
+
+error_log("running map_ajax.php");
+
 //var_dump($_POST);
 $mapfile = "../prgap.map";
 
@@ -83,7 +90,7 @@ $click_point->setXY($click_x, $click_y);
 //save extent to rect
 $old_extent =  ms_newRectObj();
 if(isset($extent_raw)){
-	$extent = explode(" ", $extent_raw);	
+	$extent = explode(" ", $extent_raw);
 	$old_extent->setextent($extent[0], $extent[1], $extent[2], $extent[3]);
 }elseif(isset($user_x)){
 	$user_x_min = $user_x - 4500;
@@ -92,7 +99,7 @@ if(isset($extent_raw)){
 	$user_y_max = $user_y + 4500;
 	$old_extent->setextent($user_x_min, $user_y_min, $user_x_max, $user_y_max);
 }else {
-	$old_extent->setextent(39084.500, 205175.500, 328284.500, 277070.500);      		
+	$old_extent->setextent(39084.500, 205175.500, 328284.500, 277070.500);
 }
 
 

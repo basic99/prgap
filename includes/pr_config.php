@@ -23,5 +23,5 @@ $pg_connect = "host=localhost dbname=prgap user=postgres";
 
 $pdo_dsn = "pgsql:dbname=prgap;host=127.0.0.1";
 
-
+ini_set("log_errors", 1);
 ?>
