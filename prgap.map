@@ -8,20 +8,20 @@ MAP
   DEBUG 5
  # CONFIG "MS_ERRORFILE" "/pub/weblogs/prgap_error_log.txt"
  CONFIG PROJ_LIB "/usr/local/share/proj/"
-  
+
   WEB
 	IMAGEPATH   '/data/server_temp/'
 	IMAGEURL  '/server_temp/'
 	LOG /var/www/html/temp/error.log
   END
-  
+
   OUTPUTFORMAT
     NAME 'AGGA'
     DRIVER AGG/PNG
     IMAGEMODE RGB
     FORMATOPTION "INTERLACE=OFF"
   END
-  
+
   OUTPUTFORMAT
     NAME mypng
     DRIVER "GD/PNG"
@@ -30,7 +30,7 @@ MAP
     EXTENSION "png"
     TRANSPARENT ON
   END
-  
+
   OUTPUTFORMAT
     NAME pdfpng
     DRIVER "GD/PNG"
@@ -39,7 +39,7 @@ MAP
     EXTENSION "png"
     FORMATOPTION "INTERLACE=OFF"
   END
-  
+
   LEGEND
     STATUS ON
     KEYSIZE 40 20
@@ -52,37 +52,37 @@ MAP
       COLOR 0 0 0
     END
   END
-  
-  SCALEBAR
-    IMAGECOLOR 255 255 255
-    LABEL
-      TYPE truetype
-      FONT  "Sans"
-      SIZE  8
-      OUTLINECOLOR  255 255 255
-      COLOR 0 0 0
-    END
-    STYLE 1
-    SIZE 100 2
-    COLOR 0 0 0
-    UNITS kilometers
-    INTERVALS 1
-    TRANSPARENT FALSE
-    STATUS EMBED
-  END
-   
+
+ # SCALEBAR
+  #  IMAGECOLOR 255 255 255
+   # LABEL
+   #   TYPE truetype
+   #   FONT  "Sans"
+    #  SIZE  8
+   #   OUTLINECOLOR  255 255 255
+    #  COLOR 0 0 0
+   # END
+   # STYLE 1
+  #  SIZE 100 2
+  #  COLOR 0 0 0
+  #  UNITS kilometers
+  #  INTERVALS 1
+  #  TRANSPARENT FALSE
+  #  STATUS EMBED
+ # END
+
   REFERENCE
     IMAGE   '/var/www/html/data/prgap/pr_ref.png'
     SIZE  142 165
     EXTENT 39084.500 205175.500 328284.500 277070.500
-    STATUS ON 
+    STATUS ON
     COLOR -1 -1 -1
   END
   SYMBOL
     NAME 'hatch-lines'
     TYPE HATCH
-  END 
-      
+  END
+
   SYMBOL
     NAME 'hatch-pattern'
     TYPE  vector
@@ -92,7 +92,7 @@ MAP
       6 6
       5 6
       5 5
-      -1 -1 
+      -1 -1
       15 15
       16 15
       16 16
@@ -102,7 +102,7 @@ MAP
   END
   #################################################################################################################
   ### layer definitions
-  #### background raster 
+  #### background raster
   LAYER
     NAME    landcover
     DATA    "/pub/grass/puerto_rico/PERMANENT/cellhd/pr_lcov"
@@ -111,7 +111,7 @@ MAP
     TYPE     raster
     TEMPLATE "dummy.html"
   END
-  
+
   LAYER
     NAME    elevation
     ## DATA    "/var/www/html/data/prgap/pr_dem.gtiff"
@@ -119,7 +119,7 @@ MAP
     STATUS   off
     TYPE     raster
   END
-  
+
   LAYER
     NAME    landcover2
     DATA    "/var/www/html/data/prgap/lc_simp_prgap.tif"
@@ -127,16 +127,16 @@ MAP
     TYPE     raster
     TEMPLATE "dummy.html"
   END
-  
+
   LAYER
     NAME    mapcalc
     DATA    ""
     STATUS   off
     TYPE     raster
   END
-  
+
    ########################################################################################################
-  ## range map     
+  ## range map
   LAYER
     CONNECTIONTYPE postgis
     NAME "range"
@@ -147,70 +147,70 @@ MAP
     CLASSITEM ""
     CLASS
       NAME "absent"
-      EXPRESSION "0"	  	         
+      EXPRESSION "0"
 	  STYLE
         OUTLINECOLOR 120 120 120
       END
     END
     CLASS
       NAME "confirmed"
-      EXPRESSION "1"	  	         
+      EXPRESSION "1"
 	  STYLE
-	    OUTLINECOLOR 120 120 120 
+	    OUTLINECOLOR 120 120 120
         COLOR 139 69 19
-	  END	
+	  END
     END
     CLASS
       NAME "predicted"
-      EXPRESSION "2"	  	         
+      EXPRESSION "2"
 	  STYLE
-	    OUTLINECOLOR 120 120 120 
+	    OUTLINECOLOR 120 120 120
         COLOR 255 119 0
-	  END	
+	  END
     END
     CLASS
       NAME "probable"
-      EXPRESSION "3"	  	         
+      EXPRESSION "3"
 	  STYLE
-	    OUTLINECOLOR 120 120 120 
+	    OUTLINECOLOR 120 120 120
         COLOR 255 224 165
-	  END	
+	  END
     END
     CLASS
       NAME "historical included"
-      EXPRESSION "4"	  	         
+      EXPRESSION "4"
 	  STYLE
 	    SYMBOL 'hatch-pattern'
-	  	COLOR 120 120 120       
+	  	COLOR 120 120 120
         SIZE 10
         OUTLINECOLOR 120 120 120
-	  END	
+	  END
     END
     CLASS
       NAME "historical excluded"
       EXPRESSION "5"
       STYLE
         SYMBOL 'hatch-lines'
-	  	COLOR 120 120 120      
+	  	COLOR 120 120 120
         ANGLE 60
         SIZE 10
         WIDTH 1
-        OUTLINECOLOR 120 120 120 
-      END     
+        OUTLINECOLOR 120 120 120
+      END
     END
     CLASS
       NAME "questionable"
-      EXPRESSION "6"	  	         
+      EXPRESSION "6"
 	  	STYLE
-	  	  OUTLINECOLOR 120 120 120 
+	  	  OUTLINECOLOR 120 120 120
 	  	  COLOR 180 180 180
-        END 
-      END 
+        END
+      END
     END
-  
+
   ##########################################################################################################################
   #######foreground layers
-  
+
   LAYER
     CONNECTIONTYPE postgis
     NAME "muni"
@@ -265,7 +265,7 @@ MAP
     TYPE POLYGON
     CLASS
       STYLE
-        OUTLINECOLOR 73 147 220 
+        OUTLINECOLOR 73 147 220
         WIDTH 1
       END
     END
@@ -310,7 +310,7 @@ MAP
     STATUS off
     TYPE LINE
     LABELITEM 'name'
-    CLASS 
+    CLASS
       LABEL
         TYPE truetype
         FONT  "Sans"
@@ -324,12 +324,12 @@ MAP
       END
       STYLE
         WIDTH 1
-        COLOR 255 0 0 
+        COLOR 255 0 0
       END
     END
-  END 
+  END
   ###########################################################################################################
-  ###manage layers  query  
+  ###manage layers  query
   LAYER
     CONNECTIONTYPE postgis
     NAME "manage_q"
@@ -338,9 +338,9 @@ MAP
     STATUS off
     TYPE POLYGON
     CLASS
-      STYLE        
+      STYLE
         SYMBOL 'hatch-lines'
-	  	COLOR 120 120 120       
+	  	COLOR 120 120 120
         SIZE 10
         OUTLINECOLOR 120 120 120
       END
@@ -359,8 +359,8 @@ MAP
     CLASSITEM "gap_status"
     TRANSPARENCY alpha
     CLASS
-      NAME "1-Permanent (encouraged natural processes)" 
-      EXPRESSION "1" 	  	         
+      NAME "1-Permanent (encouraged natural processes)"
+      EXPRESSION "1"
 	  	STYLE
         OUTLINECOLOR 3 38 92
         WIDTH 1
@@ -374,8 +374,8 @@ MAP
       END
     END
     CLASS
-      NAME "2-Permanent (suppressed natural processes)" 
-      EXPRESSION "2" 	  	         
+      NAME "2-Permanent (suppressed natural processes)"
+      EXPRESSION "2"
 	  	STYLE
         OUTLINECOLOR 47 92 149
         WIDTH 1
@@ -389,15 +389,15 @@ MAP
       END
     END
     CLASS
-      NAME "3-Permanent (intensive anthropogenic disturbance)" 
-      EXPRESSION "3" 	  	         
+      NAME "3-Permanent (intensive anthropogenic disturbance)"
+      EXPRESSION "3"
 	  	STYLE
         OUTLINECOLOR 60 131 237
         WIDTH 1
       END
       STYLE
 	  	  SYMBOL 'hatch-lines'
-	  	  COLOR   60 131 237 
+	  	  COLOR   60 131 237
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -415,24 +415,24 @@ MAP
     TYPE POLYGON
     CLASSITEM "o_class_co"
     TRANSPARENCY alpha
-    CLASS   
-      NAME "US Fish and Wildlife Service" 
-      EXPRESSION "1300"             
+    CLASS
+      NAME "US Fish and Wildlife Service"
+      EXPRESSION "1300"
       STYLE
         OUTLINECOLOR 163 96 43
         WIDTH 1
       END
       STYLE
         SYMBOL 'hatch-lines'
-        COLOR 163 96 43  
+        COLOR 163 96 43
         ANGLE 60
         SIZE 10
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "US Forest Service" 
-      EXPRESSION "1400"             
+    CLASS
+      NAME "US Forest Service"
+      EXPRESSION "1400"
       STYLE
         OUTLINECOLOR 170 255 160
         WIDTH 1
@@ -445,9 +445,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "US Department of Defense" 
-      EXPRESSION "1500"             
+    CLASS
+      NAME "US Department of Defense"
+      EXPRESSION "1500"
       STYLE
         OUTLINECOLOR 120 120 120
         WIDTH 1
@@ -460,9 +460,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Corps of Engineers" 
-      EXPRESSION "1550"             
+    CLASS
+      NAME "Corps of Engineers"
+      EXPRESSION "1550"
       STYLE
         OUTLINECOLOR 120 120 120
         WIDTH 1
@@ -475,9 +475,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "US National Park Service" 
-      EXPRESSION "1606"             
+    CLASS
+      NAME "US National Park Service"
+      EXPRESSION "1606"
       STYLE
         OUTLINECOLOR 65 104 0
         WIDTH 1
@@ -490,9 +490,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Public Domain (State Lands) " 
-      EXPRESSION "3000"             
+    CLASS
+      NAME "Public Domain (State Lands) "
+      EXPRESSION "3000"
       STYLE
         OUTLINECOLOR 179 227 238
         WIDTH 1
@@ -505,9 +505,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "University of Puerto Rico" 
-      EXPRESSION "3200"             
+    CLASS
+      NAME "University of Puerto Rico"
+      EXPRESSION "3200"
       STYLE
         OUTLINECOLOR 90 130 90
         WIDTH 1
@@ -520,9 +520,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Dept. of Natural and Env. Res." 
-      EXPRESSION "3310"             
+    CLASS
+      NAME "Dept. of Natural and Env. Res."
+      EXPRESSION "3310"
       STYLE
         OUTLINECOLOR 145 145 0
         WIDTH 1
@@ -535,9 +535,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "National Parks Company of PR" 
-      EXPRESSION "3400"             
+    CLASS
+      NAME "National Parks Company of PR"
+      EXPRESSION "3400"
       STYLE
         OUTLINECOLOR 170 35 50
         WIDTH 1
@@ -550,9 +550,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Autoridad de Energia Electrica" 
-      EXPRESSION "3510"             
+    CLASS
+      NAME "Autoridad de Energia Electrica"
+      EXPRESSION "3510"
       STYLE
         OUTLINECOLOR 177 225 17
         WIDTH 1
@@ -565,9 +565,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Land Administration" 
-      EXPRESSION "3520"             
+    CLASS
+      NAME "Land Administration"
+      EXPRESSION "3520"
       STYLE
         OUTLINECOLOR 177 225 17
         WIDTH 1
@@ -580,9 +580,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Land Authority" 
-      EXPRESSION "3530"             
+    CLASS
+      NAME "Land Authority"
+      EXPRESSION "3530"
       STYLE
         OUTLINECOLOR 177 225 17
         WIDTH 1
@@ -595,9 +595,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Compañía de Fomento Industrial" 
-      EXPRESSION "3540"             
+    CLASS
+      NAME "Compañía de Fomento Industrial"
+      EXPRESSION "3540"
       STYLE
         OUTLINECOLOR 177 225 17
         WIDTH 1
@@ -610,9 +610,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "ACT" 
-      EXPRESSION "3550"             
+    CLASS
+      NAME "ACT"
+      EXPRESSION "3550"
       STYLE
         OUTLINECOLOR 177 225 17
         WIDTH 1
@@ -625,9 +625,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Aut. Puertos, DTOP, M. de San Juan" 
-      EXPRESSION "3580"             
+    CLASS
+      NAME "Aut. Puertos, DTOP, M. de San Juan"
+      EXPRESSION "3580"
       STYLE
         OUTLINECOLOR 177 225 17
         WIDTH 1
@@ -640,9 +640,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Transportation Highway Autjority" 
-      EXPRESSION "3581"             
+    CLASS
+      NAME "Transportation Highway Autjority"
+      EXPRESSION "3581"
       STYLE
         OUTLINECOLOR 177 225 17
         WIDTH 1
@@ -655,9 +655,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Conservation Trust of Puerto Rico" 
-      EXPRESSION "6220"             
+    CLASS
+      NAME "Conservation Trust of Puerto Rico"
+      EXPRESSION "6220"
       STYLE
         OUTLINECOLOR 255 165 165
         WIDTH 1
@@ -670,9 +670,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "DNER and FCPR" 
-      EXPRESSION "6223"             
+    CLASS
+      NAME "DNER and FCPR"
+      EXPRESSION "6223"
       STYLE
         OUTLINECOLOR 255 165 165
         WIDTH 1
@@ -685,9 +685,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "LMM Foundation" 
-      EXPRESSION "6231"             
+    CLASS
+      NAME "LMM Foundation"
+      EXPRESSION "6231"
       STYLE
         OUTLINECOLOR 255 165 165
         WIDTH 1
@@ -700,9 +700,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Citizens of the Karst Foundation" 
-      EXPRESSION "7100"             
+    CLASS
+      NAME "Citizens of the Karst Foundation"
+      EXPRESSION "7100"
       STYLE
         OUTLINECOLOR 0 0 0
         WIDTH 1
@@ -714,7 +714,7 @@ MAP
         SIZE 10
         WIDTH 1
       END
-    END   
+    END
   END
   ###################################################################################
   ### management layer
@@ -727,9 +727,9 @@ MAP
     TYPE POLYGON
     CLASSITEM "m_class_co"
     TRANSPARENCY alpha
-    CLASS   
-      NAME "US Fish and Wildlife Service" 
-      EXPRESSION "1301"             
+    CLASS
+      NAME "US Fish and Wildlife Service"
+      EXPRESSION "1301"
       STYLE
         OUTLINECOLOR 168 103 49
         WIDTH 1
@@ -742,9 +742,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "US Forest Service" 
-      EXPRESSION "1410"             
+    CLASS
+      NAME "US Forest Service"
+      EXPRESSION "1410"
       STYLE
         OUTLINECOLOR 160 255 160
         WIDTH 1
@@ -757,9 +757,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "US Department of Defense" 
-      EXPRESSION "1500"             
+    CLASS
+      NAME "US Department of Defense"
+      EXPRESSION "1500"
       STYLE
         OUTLINECOLOR 120 120 120
         WIDTH 1
@@ -772,9 +772,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "US National Park Service" 
-      EXPRESSION "1606"             
+    CLASS
+      NAME "US National Park Service"
+      EXPRESSION "1606"
       STYLE
         OUTLINECOLOR 53 105 5
         WIDTH 1
@@ -787,9 +787,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "DNER and NOAA" 
-      EXPRESSION "1901"             
+    CLASS
+      NAME "DNER and NOAA"
+      EXPRESSION "1901"
       STYLE
         OUTLINECOLOR 0 0 255
         WIDTH 1
@@ -802,9 +802,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "ELAPR" 
-      EXPRESSION "3000"             
+    CLASS
+      NAME "ELAPR"
+      EXPRESSION "3000"
       STYLE
         OUTLINECOLOR 179 227 238
         WIDTH 1
@@ -817,9 +817,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "University of Puerto Rico" 
-      EXPRESSION "3201"             
+    CLASS
+      NAME "University of Puerto Rico"
+      EXPRESSION "3201"
       STYLE
         OUTLINECOLOR 95 130 95
         WIDTH 1
@@ -832,9 +832,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Dept. of Natural and Env. Res." 
-      EXPRESSION "3305"             
+    CLASS
+      NAME "Dept. of Natural and Env. Res."
+      EXPRESSION "3305"
       STYLE
         OUTLINECOLOR 151 144 0
         WIDTH 1
@@ -847,9 +847,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Compañía de Fomento Industrial" 
-      EXPRESSION "3402"             
+    CLASS
+      NAME "Compañía de Fomento Industrial"
+      EXPRESSION "3402"
       STYLE
         OUTLINECOLOR 177 31 44
         WIDTH 1
@@ -862,9 +862,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "National Parks Company of Puerto Rico" 
-      EXPRESSION "3403"             
+    CLASS
+      NAME "National Parks Company of Puerto Rico"
+      EXPRESSION "3403"
       STYLE
         OUTLINECOLOR 177 31 44
         WIDTH 1
@@ -877,9 +877,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Land Administration" 
-      EXPRESSION "3520"             
+    CLASS
+      NAME "Land Administration"
+      EXPRESSION "3520"
       STYLE
         OUTLINECOLOR 166 228 33
         WIDTH 1
@@ -892,9 +892,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Land Authority" 
-      EXPRESSION "3530"             
+    CLASS
+      NAME "Land Authority"
+      EXPRESSION "3530"
       STYLE
         OUTLINECOLOR 166 228 33
         WIDTH 1
@@ -907,9 +907,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Casa Pueblo Foundation" 
-      EXPRESSION "6211"             
+    CLASS
+      NAME "Casa Pueblo Foundation"
+      EXPRESSION "6211"
       STYLE
         OUTLINECOLOR 255 160 160
         WIDTH 1
@@ -922,9 +922,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Non-Governmental" 
-      EXPRESSION "6220"             
+    CLASS
+      NAME "Non-Governmental"
+      EXPRESSION "6220"
       STYLE
         OUTLINECOLOR 255 160 160
         WIDTH 1
@@ -937,9 +937,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Conservation Trust of Puerto Rico" 
-      EXPRESSION "6221"             
+    CLASS
+      NAME "Conservation Trust of Puerto Rico"
+      EXPRESSION "6221"
       STYLE
         OUTLINECOLOR 255 160 160
         WIDTH 1
@@ -952,9 +952,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Conservation Trust of Puerto Rico and DNER" 
-      EXPRESSION "6223"             
+    CLASS
+      NAME "Conservation Trust of Puerto Rico and DNER"
+      EXPRESSION "6223"
       STYLE
         OUTLINECOLOR 255 160 160
         WIDTH 1
@@ -967,9 +967,9 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Luis Muñoz Marin Foundation" 
-      EXPRESSION "6231"             
+    CLASS
+      NAME "Luis Muñoz Marin Foundation"
+      EXPRESSION "6231"
       STYLE
         OUTLINECOLOR  255 160 160
         WIDTH 1
@@ -982,16 +982,16 @@ MAP
         WIDTH 1
       END
     END
-    CLASS   
-      NAME "Citizens of the Karst Foundation" 
-      EXPRESSION "7100"             
+    CLASS
+      NAME "Citizens of the Karst Foundation"
+      EXPRESSION "7100"
       STYLE
         OUTLINECOLOR  0 0 0
         WIDTH 1
       END
       STYLE
         SYMBOL 'hatch-lines'
-        COLOR   0 0 0 
+        COLOR   0 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1008,10 +1008,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1019,7 +1019,7 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
   LAYER
@@ -1030,10 +1030,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1041,7 +1041,7 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
   LAYER
@@ -1052,10 +1052,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1063,7 +1063,7 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
   LAYER
@@ -1074,10 +1074,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1085,7 +1085,7 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
   LAYER
@@ -1096,10 +1096,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1107,7 +1107,7 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
   LAYER
@@ -1118,10 +1118,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1129,7 +1129,7 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
   LAYER
@@ -1140,10 +1140,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1151,7 +1151,7 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
   LAYER
@@ -1162,10 +1162,10 @@ MAP
     STATUS OFF
     TYPE POLYGON
     TRANSPARENCY alpha
-    CLASS	
+    CLASS
       STYLE
 	  	SYMBOL 'hatch-lines'
-	  	COLOR 255 0 0      
+	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
         WIDTH 1
@@ -1173,12 +1173,12 @@ MAP
       STYLE
         WIDTH 1
         OUTLINECOLOR 255 0 0
-      END  	         
+      END
     END
   END
-  
+
   #########################################################################################################
-  ## AOI map      
+  ## AOI map
   LAYER
     CONNECTIONTYPE postgis
     NAME "aoi"
@@ -1195,7 +1195,7 @@ MAP
     CLASS
       STYLE
         WIDTH 1
-        OUTLINECOLOR 255 0 0 
+        OUTLINECOLOR 255 0 0
       END
     END
   END
