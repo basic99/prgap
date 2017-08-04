@@ -12,6 +12,7 @@ error_log("running map_ajax.php");
 
 //var_dump($_POST);
 $mapfile = "../prgap.map";
+$mapfile = "../hello.map";
 
 $user_x = $_POST['user_x'];
 $user_y = $_POST['user_y'];
