@@ -51,6 +51,7 @@ pg_query($query);
 
 //create map object
 $map = ms_newMapObj($mapfile);
+die();
 
 //check that script is still running after mapobj creation
 $query = "delete from check_mapobj where job_id = $job_id";

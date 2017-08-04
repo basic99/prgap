@@ -1,8 +1,8 @@
 MAP
      NAME "Hello World"
      SIZE 400 300
-    FONTSET '/var/www/html/ncgap/myfonts.txt'
-    IMAGETYPE AGGA
+     FONTSET '/var/www/html/ncgap/myfonts.txt'
+     IMAGETYPE AGGA
      #IMAGETYPE png
      EXTENT 39084.500 205175.500 328284.500 277070.500
      CONFIG PROJ_LIB "/usr/local/share/proj/"
