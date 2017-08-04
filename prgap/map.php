@@ -154,7 +154,7 @@ function send_ajax(){
 			dataType: "json",
 			success: function(data){//alert(data);
 				if(data.check == "failure"){
-					//send_ajax();
+					send_ajax();
 				}
 			}
 		});
