@@ -115,13 +115,13 @@ if(preg_match("/elevation/", $layer)){
 	$this_layer = $map->getLayerByName('elevation');
 	$this_layer->set('status', MS_OFF);
 }
-if(preg_match("/landcover/", $layer)){
-	$this_layer = $map->getLayerByName('landcover');
-	$this_layer->set('status', MS_ON);
-}else{
-	$this_layer = $map->getLayerByName('landcover');
-	$this_layer->set('status', MS_OFF);
-}
+// if(preg_match("/landcover/", $layer)){
+// 	$this_layer = $map->getLayerByName('landcover');
+// 	$this_layer->set('status', MS_ON);
+// }else{
+// 	$this_layer = $map->getLayerByName('landcover');
+// 	$this_layer->set('status', MS_OFF);
+// }
 if(preg_match("/lcov2/", $layer)){
 	$this_layer = $map->getLayerByName('landcover2');
 	$this_layer->set('status', MS_ON);
