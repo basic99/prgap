@@ -11,8 +11,7 @@ ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
 error_log("running map_ajax.php");
 
 //var_dump($_POST);
-$mapfile = "../prgap.map";
-$mapfile = "../hello.map";
+$mapfile = "/var/www/html/prgap/prgap.map";
 
 $user_x = $_POST['user_x'];
 $user_y = $_POST['user_y'];
