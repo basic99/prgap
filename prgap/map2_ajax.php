@@ -158,6 +158,7 @@ if (preg_match("/richness/", $species_layer) && !preg_match("/richness/", $speci
 
 //convert sppcode to raster name
 $raster = "pd_".$sppcode;
+error_log($raster);
 
 //set layers from controls
 if(preg_match("/elevation/", $layer)){
