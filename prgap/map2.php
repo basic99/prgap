@@ -178,7 +178,7 @@ console.log("testing");
 			range_transp: range_transp,
 			job_id: job_id
 		},
-		dataType: "json",
+		// dataType: "json",
 		success: function(data){
 			console.log("testing");
 			// console.log(data);
@@ -202,12 +202,12 @@ console.log("testing");
 			// $('#map_species_pdf').val(data.mapspecies);
 
          // if(permlink_flag){
-			<?php
+			// <?php
 			// if(isset($_GET['species'])){
 			// 	$species = $_GET['species'];
 			// 	echo "parent.controls.location = \"controls4.php?species={$species}&aoiname=\" + data.aoiname;";
 			// }
-			?>
+			// ?>
 			// permlink_flag = false;
 			// }
 
