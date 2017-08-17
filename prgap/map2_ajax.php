@@ -292,7 +292,7 @@ if(preg_match("/habitat|ownership|status|manage|richness/", $species_layer)){
 
 if(preg_match("/predicted/", $species_layer)){
         $this_layer = $map->getLayerByName('mapcalc');
-        // $this_layer->set('data', $grass_raster_perm.$raster);
+        $this_layer->set('data', $grass_raster_perm.$raster);
         // $this_layer->set('status', MS_ON);
      $this_layer->set('opacity', $pred_transp);
 		  //set layers from controls
@@ -313,7 +313,6 @@ if(preg_match("/predicted/", $species_layer)){
 
 }
 
-error_log("line 316, map2_ajax");
 
 $filter = "(name = '{$aoi_name}')";
 $this_layer = $map->getLayerByName('aoi');
@@ -339,16 +338,10 @@ if ($new_page  || $zoom_aoi) {
         $maxy = $mapext[3];
         $extent_obj->setExtent($minx, $miny, $maxx, $maxy);
 }
-error_log("line 342, map2_ajax");
 
 $map->setSize($win_w, $win_h);
-error_log("line 345, map2_ajax");
 $map->zoompoint($zoom, $click_point, $win_w, $win_h, $extent_obj);
-error_log("line 347, map2_ajax");
 $mapimage = $map->draw();
-error_log($maploc);
-
-
 $mapimage->saveImage($maploc);
 error_log($maploc);
 
