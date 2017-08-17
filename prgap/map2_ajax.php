@@ -356,6 +356,7 @@ sprintf("%3.6f",$map->extent->maxy);
 $ret = json_encode(array("mapname"=>$mapname,"extent"=>$new_extent, "refname"=>$refurl, "aoiname"=>$aoi_name, "mapspecies"=>$map_species));
 
 echo $ret;
+error_log($ret);
 
 ?>
 
