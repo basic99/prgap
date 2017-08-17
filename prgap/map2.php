@@ -140,7 +140,7 @@ function send_ajax(){
 	var richness_species = $('#richness_species_ajax').val();
 	//id number for job to check if create map object fails
 	//var job_id = Math.floor(Math.random() * 1000000000);
-console.log("testing");
+	console.log("start ajax");
 	$('.mapimage').hide();
 	$('#loader_gif').show();
 	$.ajax({
@@ -180,7 +180,6 @@ console.log("testing");
 		},
 		dataType: "json",
 		success: function(data){
-			console.log("testing");
 			console.log(data);
 			$(parent.refmap.document.images[0]).attr("src", data.refname);
 			$('#extent_ajax').val(data.extent);

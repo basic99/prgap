@@ -57,6 +57,11 @@ $richness_species = ($_POST['richness_species']);
 $type = $_POST['type'];
 $job_id = $_POST['job_id'];
 
+foreach ($_POST as $key => $value) {
+  error_log($key);
+  error_log($value);
+}
+
 $user_name = $_SESSION['username'];
 error_log($user_name);
 
