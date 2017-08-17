@@ -1,22 +1,22 @@
-<?php 
+<?php
 /**
  * Second of 2 pages that displays map in frame map. This page used when AOI is defined.
- * 
+ *
  * Gather $_POST data from map.php or $_FILES from upload.php.
- * If $_FILES is set then check that uploaded files contain .shp, .shx and .prj if not then throw an  exception. 
+ * If $_FILES is set then check that uploaded files contain .shp, .shx and .prj if not then throw an  exception.
  * Move uploaded files from temp space.
  * Test $type variable to determine which AOI definition function to call, which will create an entry in table aoi.
  * Create map object, and turn on layers from layers string. Use setFilter to display AOI boundary from table aoi.
- * To display species range map (layer range in mapfile) use set('classitem', strtolower($sppcode)) to select column in 
+ * To display species range map (layer range in mapfile) use set('classitem', strtolower($sppcode)) to select column in
  * table nc_range that corresponds to species.
- * To display GRASS calculated maps select layer mapcalc and use set('data', $grass_raster.$map_species) to tell it the location of 
+ * To display GRASS calculated maps select layer mapcalc and use set('data', $grass_raster.$map_species) to tell it the location of
  * the calculated GRASS map.
- * To display predicted distribution maps select layer mapcalc and use set('data', $grass_raster_perm.$raster)  to tell it the location 
- * of the predicted distribution GRASS map 
- * 
- * 
+ * To display predicted distribution maps select layer mapcalc and use set('data', $grass_raster_perm.$raster)  to tell it the location
+ * of the predicted distribution GRASS map
+ *
+ *
  * @package ncgap
- * 
+ *
  */
 session_start();
 if(!isset($_SESSION['username'])){
@@ -68,10 +68,10 @@ $(function() {
    <?php
 	if(!isset($_GET['species'])){
 		echo "parent.controls.location = \"controls2.php\";";
-	} 	
+	}
 	?>
 	var shape_error = $('#shape_error').val();
-	if(shape_error == 'none'){		
+	if(shape_error == 'none'){
 		send_ajax();
 	} else {
 		$('.mapimage').html(shape_error);
@@ -180,7 +180,7 @@ function send_ajax(){
 		},
 		dataType: "json",
 		success: function(data){
-			//alert(data);
+			console.log(data);
 			$(parent.refmap.document.images[0]).attr("src", data.refname);
 			$('#extent_ajax').val(data.extent);
 			$('#extent_pdf').val(data.extent);
@@ -199,13 +199,13 @@ function send_ajax(){
 			$('#clky_ajax').val(win_h/2);
 			$('#map_species_ajax').val(data.mapspecies);
 			$('#map_species_pdf').val(data.mapspecies);
-         
+
          if(permlink_flag){
 			<?php
 			if(isset($_GET['species'])){
 				$species = $_GET['species'];
 				echo "parent.controls.location = \"controls4.php?species={$species}&aoiname=\" + data.aoiname;";
-			} 	
+			}
 			?>
 			permlink_flag = false;
 			}
@@ -344,18 +344,18 @@ if(isset($_GET['species'])){
 	$extent = '39084 205175 328284 277070';
    $ecosys_aoi = "1";
 } else {
-   
+
    $posix = $_POST['posix'];
    $posiy = $_POST['posiy'];
    //aoi name for saved aoi
    $aoi_name_saved = $_POST['aoi_name_saved'];
-   
+
    //$extent = $_POST['extent'];
    $win_w = $_POST['win_w'];
    $win_h = $_POST['win_h'];
-   
+
    $layer = $_POST['layers'];
-   
+
    //ogc_fid for predefined aoi
    $owner_aoi = $_POST['owner'];
    $manage_aoi = $_POST['manage'];
@@ -365,7 +365,7 @@ if(isset($_GET['species'])){
    $zone_aoi = $_POST['zone'];
    $island_aoi = $_POST['island'];
    $ecosys_aoi = $_POST['ecosys'];
-   
+
    $extent = $_POST['extent'];
    $zoom_aoi = $_POST['zoom_aoi'];
    $zoom = $_POST['zoom'];
@@ -377,7 +377,7 @@ if(isset($_GET['species'])){
    $richness_species = stripslashes($_POST['richness_species']);
    $type = $_POST['type'];
    //var_dump($_POST);
-   
+
    //create click obj
    $click_x=$win_w/2;
    $click_y=$win_h/2;
@@ -443,33 +443,33 @@ try {
 </div>
 
 <div id="ctls" style="position:absolute; top:69px; left:0px; z-index: 999;" >
-		  
+
 <div id="panup" style="position:absolute; left: 13px; top: 4px; width: 18px; height: 18px; z-index: 1004;">
 <img src="/graphics/openlayers/north-mini.png" />
 </div>
 
 <div id="panleft" style="position:absolute; left: 4px; top: 22px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/west-mini.png" />  
+<img src="/graphics/openlayers/west-mini.png" />
 </div>
 
 <div id="panright" style="position:absolute; left: 22px; top: 22px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/east-mini.png" />  
+<img src="/graphics/openlayers/east-mini.png" />
 </div>
 
 <div id="pandown" style="position:absolute; left: 13px; top: 40px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/south-mini.png" />  
+<img src="/graphics/openlayers/south-mini.png" />
 </div>
 
 <div id="zoomin" style="position:absolute; left: 13px; top: 63px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/zoom-plus-mini.png" />  
+<img src="/graphics/openlayers/zoom-plus-mini.png" />
 </div>
 
 <div id="zoommax" style="position:absolute; left: 13px; top: 81px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/zoom-world-mini.png" />  
+<img src="/graphics/openlayers/zoom-world-mini.png" />
 </div>
 
 <div id="zoomout" style="position:absolute; left: 13px; top: 99px; width: 18px; height: 18px;">
-<img src="/graphics/openlayers/zoom-minus-mini.png" />  
+<img src="/graphics/openlayers/zoom-minus-mini.png" />
 </div>
 
 </div>
@@ -486,7 +486,7 @@ try {
 
 <!-- form fm3 used to open controls3.php -->
 <form name='fm3' action="controls3.php" method="post" target="controls">
-<input  type="hidden" name="aoi_name" id="aoi_name_fm3" class="aoi_name"/> 
+<input  type="hidden" name="aoi_name" id="aoi_name_fm3" class="aoi_name"/>
 <input  type="hidden" name="type" value="<?php echo $type; ?>" />
 <input type="hidden" name="manage"  value="<?php  echo $manage_aoi; ?>" />
 <input type="hidden" name="owner"  value="<?php  echo $owner_aoi; ?>" />
@@ -517,8 +517,8 @@ try {
 
 <form action="" name="ajaxform">
 <input type="hidden" id="username" value="<?php echo $user_name; ?>"  />
-<input type="hidden" id="aoiname_ajax" class="aoi_name" /> 
-<input type="hidden" id="aoinamesaved_ajax" value="<?php echo $aoi_name_saved; ?>" /> 
+<input type="hidden" id="aoiname_ajax" class="aoi_name" />
+<input type="hidden" id="aoinamesaved_ajax" value="<?php echo $aoi_name_saved; ?>" />
 <input type="hidden" id="clkx_ajax"  value="<?php echo $click_x; ?>" />
 <input type="hidden" id="clky_ajax" value="<?php echo $click_y; ?>" />
 <input type="hidden" id="posix_ajax" value="<?php echo $posix; ?>" />
