@@ -181,7 +181,7 @@ console.log("testing");
 		// dataType: "json",
 		success: function(data){
 			console.log("testing");
-			// console.log(data);
+			console.log(data);
 			// $(parent.refmap.document.images[0]).attr("src", data.refname);
 			// $('#extent_ajax').val(data.extent);
 			// $('#extent_pdf').val(data.extent);
