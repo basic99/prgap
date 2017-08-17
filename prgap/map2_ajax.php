@@ -4,7 +4,12 @@ require('pr_config.php');
 require('pr_define_aoi.php');
 
 session_start();
-//date_default_timezone_set("America/New_York");
+
+// ini_set("display_errors", 0);
+ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
+
+error_log("running map_ajax2.php");
+date_default_timezone_set("America/New_York");
 pg_connect($pg_connect);
 
 //click points set by javascript
@@ -53,6 +58,7 @@ $type = $_POST['type'];
 $job_id = $_POST['job_id'];
 
 $user_name = $_SESSION['username'];
+error_log($user_name);
 
 $post = print_r($_POST, true);
 $logfileptr = fopen("/var/log/weblog/prgap", "a");
@@ -129,7 +135,7 @@ $mapname = "map".rand(0,9999999).".png";
 $maploc = "{$mspath}{$mapname}";
 
 //get calculated maps for single species or richness from aoi_class, but first test to see if we can use previous map
-if (preg_match("/habitat/", $species_layer) && !preg_match("/habitat/", $species_layer_prev)) {  
+if (preg_match("/habitat/", $species_layer) && !preg_match("/habitat/", $species_layer_prev)) {
       $map_species = $pr_aoi_class->landcover_map($sppcode);
 }
 if (preg_match("/ownership/", $species_layer) && !preg_match("/ownership/", $species_layer_prev)) {
@@ -138,10 +144,10 @@ if (preg_match("/ownership/", $species_layer) && !preg_match("/ownership/", $spe
 if (preg_match("/status/", $species_layer) && !preg_match("/status/", $species_layer_prev)) {
 		$map_species = $pr_aoi_class->protection_map($sppcode);
 }
-if (preg_match("/manage/", $species_layer) && !preg_match("/manage/", $species_layer_prev)) { 
+if (preg_match("/manage/", $species_layer) && !preg_match("/manage/", $species_layer_prev)) {
       $map_species = $pr_aoi_class->management_map($sppcode);
 }
-if (preg_match("/richness/", $species_layer) && !preg_match("/richness/", $species_layer_prev)) { 
+if (preg_match("/richness/", $species_layer) && !preg_match("/richness/", $species_layer_prev)) {
      $map_species = $pr_aoi_class->richness($richness_species);
 }
 
