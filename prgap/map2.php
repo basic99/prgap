@@ -180,6 +180,7 @@ function send_ajax(){
 		},
 		dataType: "json",
 		success: function(data){
+			console.log("testing");
 			console.log(data);
 			$(parent.refmap.document.images[0]).attr("src", data.refname);
 			$('#extent_ajax').val(data.extent);
@@ -200,15 +201,15 @@ function send_ajax(){
 			$('#map_species_ajax').val(data.mapspecies);
 			$('#map_species_pdf').val(data.mapspecies);
 
-         if(permlink_flag){
+         // if(permlink_flag){
 			<?php
-			if(isset($_GET['species'])){
-				$species = $_GET['species'];
-				echo "parent.controls.location = \"controls4.php?species={$species}&aoiname=\" + data.aoiname;";
-			}
+			// if(isset($_GET['species'])){
+			// 	$species = $_GET['species'];
+			// 	echo "parent.controls.location = \"controls4.php?species={$species}&aoiname=\" + data.aoiname;";
+			// }
 			?>
-			permlink_flag = false;
-			}
+			// permlink_flag = false;
+			// }
 
 		}
 
