@@ -258,7 +258,7 @@ if(preg_match("/status/", $layer)){
 if(preg_match("/range/", $species_layer)){
         $this_layer = $map->getLayerByName('range');
         $this_layer->set('classitem', strtolower($sppcode));
-        $this_layer->set('status', MS_ON);
+        // $this_layer->set('status', MS_ON);
        $this_layer->set('opacity', $range_transp);
 		  //set layers from controls
 		  if(preg_match("/landcover/", $layer)){
