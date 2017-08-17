@@ -119,7 +119,7 @@ $pr_aoi_class = $_SESSION[$aoi_name];
 //$aoi_area = $pr_aoi_class->get_area();
 
 //create mapobj
-$mapfile = "../prgap.map";
+$mapfile = "/var/www/html/prgap/prgap.map";
 
 //check that script is still running after mapobj creation
 $query = "insert into check_mapobj(job_id ) values ( $job_id )";
