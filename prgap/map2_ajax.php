@@ -4,12 +4,12 @@ require('pr_config.php');
 require('pr_define_aoi.php');
 
 session_start();
+date_default_timezone_set('America/New_York');
 
 // ini_set("display_errors", 0);
 ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
 
 error_log("running map_ajax2.php");
-date_default_timezone_set("America/New_York");
 pg_connect($pg_connect);
 
 //click points set by javascript
