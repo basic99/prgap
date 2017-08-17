@@ -342,7 +342,10 @@ if ($new_page  || $zoom_aoi) {
 error_log("line 342, map2_ajax");
 
 $map->setSize($win_w, $win_h);
+error_log("line 345, map2_ajax");
 $map->zoompoint($zoom, $click_point, $win_w, $win_h, $extent_obj);
+error_log("line 347, map2_ajax");
+
 $mapimage = $map->draw();
 $mapimage->saveImage($maploc);
 error_log($maploc);
