@@ -335,6 +335,7 @@ $map->setSize($win_w, $win_h);
 $map->zoompoint($zoom, $click_point, $win_w, $win_h, $extent_obj);
 $mapimage = $map->draw();
 $mapimage->saveImage($maploc);
+error_log($maploc);
 
 
 //create ref map
