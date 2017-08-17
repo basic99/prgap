@@ -178,9 +178,10 @@ function send_ajax(){
 			range_transp: range_transp,
 			job_id: job_id
 		},
-		dataType: "json",
-		success: function(data){
-			console.log(data);
+		// dataType: "json",
+		success: function(data2){
+			console.log(data2);
+			var data = jQuery.parseJSON(data2);
 			$(parent.refmap.document.images[0]).attr("src", data.refname);
 			$('#extent_ajax').val(data.extent);
 			$('#extent_pdf').val(data.extent);
