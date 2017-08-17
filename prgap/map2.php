@@ -178,38 +178,38 @@ console.log("testing");
 			range_transp: range_transp,
 			job_id: job_id
 		},
-		// dataType: "json",
+		dataType: "json",
 		success: function(data){
 			console.log("testing");
 			console.log(data);
-			// $(parent.refmap.document.images[0]).attr("src", data.refname);
-			// $('#extent_ajax').val(data.extent);
-			// $('#extent_pdf').val(data.extent);
-			// $('.aoi_name').val(data.aoiname);
-			// $("#zoomaoi_ajax").val(0); //reset flag to prevent zoom to aoi
-			// //$('#loadingarea').html("<img id='tmpimg' src=/server_temp/" + data.mapname + " />");
-			// $('.mapimage').attr("src", "/server_temp/" + data.mapname);
-			// $('.mapimage').load(function(){
-			// 	$('.mapimage').fadeIn(300);
-			// 	$('#loader_gif').fadeOut(300);
-			// 	$('#aoi_msg').fadeOut(300);
-			// });
-			// $('#dragMap').css("top", "69px");
-			// $('#dragMap').css("left", "0px");
-			// $('#clkx_ajax').val(win_w/2);
-			// $('#clky_ajax').val(win_h/2);
-			// $('#map_species_ajax').val(data.mapspecies);
-			// $('#map_species_pdf').val(data.mapspecies);
+			$(parent.refmap.document.images[0]).attr("src", data.refname);
+			$('#extent_ajax').val(data.extent);
+			$('#extent_pdf').val(data.extent);
+			$('.aoi_name').val(data.aoiname);
+			$("#zoomaoi_ajax").val(0); //reset flag to prevent zoom to aoi
+			//$('#loadingarea').html("<img id='tmpimg' src=/server_temp/" + data.mapname + " />");
+			$('.mapimage').attr("src", "/server_temp/" + data.mapname);
+			$('.mapimage').load(function(){
+				$('.mapimage').fadeIn(300);
+				$('#loader_gif').fadeOut(300);
+				$('#aoi_msg').fadeOut(300);
+			});
+			$('#dragMap').css("top", "69px");
+			$('#dragMap').css("left", "0px");
+			$('#clkx_ajax').val(win_w/2);
+			$('#clky_ajax').val(win_h/2);
+			$('#map_species_ajax').val(data.mapspecies);
+			$('#map_species_pdf').val(data.mapspecies);
 
-         // if(permlink_flag){
-			// <?php
-			// if(isset($_GET['species'])){
-			// 	$species = $_GET['species'];
-			// 	echo "parent.controls.location = \"controls4.php?species={$species}&aoiname=\" + data.aoiname;";
-			// }
-			// ?>
-			// permlink_flag = false;
-			// }
+         if(permlink_flag){
+			<?php
+			if(isset($_GET['species'])){
+				$species = $_GET['species'];
+				echo "parent.controls.location = \"controls4.php?species={$species}&aoiname=\" + data.aoiname;";
+			}
+			?>
+			permlink_flag = false;
+			}
 
 		}
 
