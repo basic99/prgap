@@ -313,6 +313,8 @@ if(preg_match("/predicted/", $species_layer)){
 
 }
 
+error_log("line 316, map2_ajax");
+
 $filter = "(name = '{$aoi_name}')";
 $this_layer = $map->getLayerByName('aoi');
 $this_layer->setFilter($filter);
