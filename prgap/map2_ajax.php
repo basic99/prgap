@@ -339,6 +339,8 @@ if ($new_page  || $zoom_aoi) {
         $maxy = $mapext[3];
         $extent_obj->setExtent($minx, $miny, $maxx, $maxy);
 }
+error_log("line 342, map2_ajax");
+
 $map->setSize($win_w, $win_h);
 $map->zoompoint($zoom, $click_point, $win_w, $win_h, $extent_obj);
 $mapimage = $map->draw();
