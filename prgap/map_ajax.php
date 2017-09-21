@@ -11,6 +11,7 @@ ini_set("display_errors", 0);
 ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
 
 error_log("running map_ajax.php");
+die();
 
 //var_dump($_POST);
 $mapfile = "/var/www/html/prgap/prgap.map";
