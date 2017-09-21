@@ -7,12 +7,12 @@ $grass_raster = "/pub/grass/puerto_rico/webserv/cellhd/";
 //location of GRASS raster data for permanent
 $grass_raster_perm = "/pub/grass/puerto_rico/PERMANENT/cellhd/";
 
-$GISBASE = "/usr/local/grass-6.4.0svn";
+$GISBASE = "/usr/local/grass-6.4.6";
 
 // copy .grassrc6 from /home/webserv
 $GISRC = "/var/www/html/prgap/grassrc";
 
-$PATH = "/usr/local/grass-6.4.0svn/bin:/usr/local/grass-6.4.0svn/scripts:/usr/local/bin:/usr/bin:/bin";
+$PATH = "/usr/local/grass-6.4.6/bin:/usr/local/grass-6.4.6/scripts:/usr/local/bin:/usr/bin:/bin";
 
 //location of base directory, ie where map file is located
 $base_dir = "/var/www/html/prgap";
