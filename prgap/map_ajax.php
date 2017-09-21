@@ -4,7 +4,7 @@
 require("pr_config.php");
 pg_connect($pg_connect);
 
-// ini_set("log_errors", 1);
+ini_set("log_errors", 1);
 date_default_timezone_set("America/New_York");
 
 ini_set("display_errors", 0);
