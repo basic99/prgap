@@ -293,7 +293,7 @@ if(preg_match("/habitat|ownership|status|manage|richness/", $species_layer)){
 if(preg_match("/predicted/", $species_layer)){
         $this_layer = $map->getLayerByName('mapcalc');
         $this_layer->set('data', $grass_raster_perm.$raster);
-        // $this_layer->set('status', MS_ON);
+        $this_layer->set('status', MS_ON);
      $this_layer->set('opacity', $pred_transp);
 		  //set layers from controls
 		  if(preg_match("/landcover/", $layer)){
