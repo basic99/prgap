@@ -52,7 +52,7 @@ $(function() {
 		type: "POST",
 		url: "aoi_report_ajax.php",
 		data: data,
-		dataType: "json",
+		dataType: "text",
 		success: function(data){ //alert(data);
             console.log(data);
 			$('#somecontent').hide().html(data.rep).show("normal");
