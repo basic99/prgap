@@ -75,7 +75,7 @@ if ($report_type == 'richness_report') {
 	$report .= "<pre>".$a->richnessreport($species)."</pre>";
 }
 
-error_log($report);
+// error_log($report);
 
 echo json_encode(array("rep"=>$report));die();
 ?>
