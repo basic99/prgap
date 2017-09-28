@@ -1,4 +1,4 @@
 GISDBASE: /pub/grass
 LOCATION_NAME: puerto_rico
 MAPSET: webserv
-GRASS_GUI: tcltk
+GRASS_GUI: text
