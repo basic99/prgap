@@ -23,7 +23,7 @@ button {
 </style>
 <script language="javascript" type="text/javascript">
 /* <![CDATA[ */
-
+console.log("wtf");
 $(function() {
   $("button").button();
   $("#prnrep").click(function(evt) {
@@ -47,6 +47,7 @@ $(function() {
 
     var data = { aoiname: aoiname, report: report, species: species, species2: species2, sppcode: sppcode};
     console.log(data);
+    alert(data);
 
 	$.ajax({
 		type: "POST",
