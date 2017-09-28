@@ -26,7 +26,9 @@ button {
 console.log("wtf");
 
 $(document).ready(function(){
+
     console.log("hello world");
+    alert("wtf");
 });
 
 // $(function() {
