@@ -14,7 +14,6 @@ ini_set("log_errors", 1);
 
 error_log("aoi_report_ajax");
 error_log($aoi_name);
-error_log($a);
 
 
 //echo json_encode(array("time"=>$report_type, "status"=>$aoi_name, "rep"=>"$sppcode"));die();
