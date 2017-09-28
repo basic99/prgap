@@ -2,6 +2,8 @@
 include("pr_config.php");
 $prdbcon = pg_connect($pg_connect);
 
+ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
+
 
 //////////////////////////////////////////////////////////////////////////////////
 // this class has a constructor that takes as a parameter an AOI name
@@ -77,7 +79,7 @@ class pr_aoi_class{
 		//if ($this->area > $max_aoi_area) {
 		//throw new Exception($this->area);
 		//}
-		
+
 		//check if can use mask already in GRASS
 		$query = "select ogc_fid, aoi_data from aoi where name='{$this->aoi_name}'";
 		$result = pg_query($prdbcon, $query);
@@ -110,8 +112,9 @@ class pr_aoi_class{
 		$grass_cmd=<<<GRASS_SCRIPT
 g.region -d
 r.in.gdal input={$blank} output={$blank_file}a
-cat {$this->base_dir}/grass/mask_recl | r.reclass input={$blank_file}a output={$blank_file} 
+cat {$this->base_dir}/grass/mask_recl | r.reclass input={$blank_file}a output={$blank_file}
 GRASS_SCRIPT;
+error_log($grass_cmd);
 		//echo $grass_cmd."<br>";ob_flush();flush();
 		system($grass_cmd);
 		//system('whoami');
@@ -170,7 +173,7 @@ public function aoi_management(){
 g.region n={$this->max_y} s={$this->min_y} w={$this->min_x} e={$this->max_x}
 r.mapcalc {$this->mask_name}calc_man = '{$this->mask_name}  * pr_manage' 1>/dev/null 2>/dev/null
 cat {$this->base_dir}/grass/pr_manage_recl | r.reclass input={$this->mask_name}calc_man output={$this->mask_name}recl_man
-r.report -n map={$this->mask_name}recl_man units=a,h,p 
+r.report -n map={$this->mask_name}recl_man units=a,h,p
 GRASS_SCRIPT;
 	return `$str`;
 }
@@ -181,7 +184,7 @@ public function aoi_ownership(){
 g.region n={$this->max_y} s={$this->min_y} w={$this->min_x} e={$this->max_x}
 r.mapcalc {$this->mask_name}calc_own = '{$this->mask_name}  * pr_owner' 1>/dev/null 2>/dev/null
 cat {$this->base_dir}/grass/pr_own_recl | r.reclass input={$this->mask_name}calc_own output={$this->mask_name}recl_own
-r.report -n map={$this->mask_name}recl_own units=a,h,p 
+r.report -n map={$this->mask_name}recl_own units=a,h,p
 GRASS_SCRIPT;
 	return `$str`;
 }
@@ -192,7 +195,7 @@ public function aoi_status(){
 g.region n={$this->max_y} s={$this->min_y} w={$this->min_x} e={$this->max_x}
 r.mapcalc {$this->mask_name}calc_stat = '{$this->mask_name}  * pr_status' 1>/dev/null 2>/dev/null
 cat {$this->base_dir}/grass/pr_status_recl | r.reclass input={$this->mask_name}calc_stat output={$this->mask_name}recl_stat
-r.report -n map={$this->mask_name}recl_stat units=a,h,p 
+r.report -n map={$this->mask_name}recl_stat units=a,h,p
 GRASS_SCRIPT;
 	return `$str`;
 }
@@ -211,7 +214,7 @@ public function predicted($a){
 g.region n={$this->max_y} s={$this->min_y} w={$this->min_x} e={$this->max_x}
 r.mapcalc {$this->mask_name}calc_pred = '{$this->mask_name}  *{$raster}' 1>/dev/null 2>/dev/null
 cat {$this->base_dir}/grass/pr_pred_recl | r.reclass input={$this->mask_name}calc_pred output={$this->mask_name}recl_pred
-r.report -n map={$this->mask_name}recl_pred units=a,h,p 
+r.report -n map={$this->mask_name}recl_pred units=a,h,p
 GRASS_SCRIPT;
 	return `$str`;
 }
@@ -225,7 +228,7 @@ public function species_status($a){
 g.region n={$this->max_y} s={$this->min_y} w={$this->min_x} e={$this->max_x}
 r.mapcalc {$this->mask_name}calc_stat_sp = '{$this->mask_name}  *{$raster}* pr_status' 1>/dev/null 2>/dev/null
 cat {$this->base_dir}/grass/pr_status_recl | r.reclass input={$this->mask_name}calc_stat_sp output={$this->mask_name}recl_stat_sp
-r.report -n map={$this->mask_name}recl_stat_sp units=a,h,p 
+r.report -n map={$this->mask_name}recl_stat_sp units=a,h,p
 GRASS_SCRIPT;
 	return `$str`;
 }
@@ -239,7 +242,7 @@ public function species_ownership($a){
 g.region n={$this->max_y} s={$this->min_y} w={$this->min_x} e={$this->max_x}
 r.mapcalc {$this->mask_name}calc_own_sp = '{$this->mask_name}  *{$raster}* pr_owner' 1>/dev/null 2>/dev/null
 cat {$this->base_dir}/grass/pr_own_recl | r.reclass input={$this->mask_name}calc_own_sp output={$this->mask_name}recl_own_sp
-r.report -n map={$this->mask_name}recl_own_sp units=a,h,p 
+r.report -n map={$this->mask_name}recl_own_sp units=a,h,p
 GRASS_SCRIPT;
 	return `$str`;
 }
@@ -254,7 +257,7 @@ public function species_management($a){
 g.region n={$this->max_y} s={$this->min_y} w={$this->min_x} e={$this->max_x}
 r.mapcalc {$this->mask_name}calc_man_sp = '{$this->mask_name}  *{$raster}*  pr_manage' 1>/dev/null 2>/dev/null
 cat {$this->base_dir}/grass/pr_manage_recl | r.reclass input={$this->mask_name}calc_man_sp output={$this->mask_name}recl_man_sp
-r.report -n map={$this->mask_name}recl_man_sp units=a,h,p 
+r.report -n map={$this->mask_name}recl_man_sp units=a,h,p
 GRASS_SCRIPT;
 	return `$str`;
 }
