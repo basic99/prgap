@@ -9,6 +9,14 @@ $species2 = $_POST['species2'];
 $aoi_name = $_POST['aoiname'];
 $a = $_SESSION[$aoi_name];
 
+ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
+ini_set("log_errors", 1);
+
+error_log("aoi_report_ajax");
+error_log($aoi_name);
+error_log($a);
+
+
 //echo json_encode(array("time"=>$report_type, "status"=>$aoi_name, "rep"=>"$sppcode"));die();
 
 
