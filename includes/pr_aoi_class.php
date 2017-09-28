@@ -116,7 +116,8 @@ cat {$this->base_dir}/grass/mask_recl | r.reclass input={$blank_file}a output={$
 GRASS_SCRIPT;
 error_log($grass_cmd);
 		//echo $grass_cmd."<br>";ob_flush();flush();
-		system($grass_cmd);
+		$ret_val = system($grass_cmd);
+		error_log($retval);
 		//system('whoami');
 
 	}
