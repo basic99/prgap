@@ -45,10 +45,13 @@ $(function() {
 	var species2 = $('#species2').val();
 	var sppcode = $('#sppcode').val();
 
+    var data = { aoiname: aoiname, report: report, species: species, species2: species2, sppcode: sppcode};
+    console.log(data);
+
 	$.ajax({
 		type: "POST",
 		url: "aoi_report_ajax.php",
-		data: { aoiname: aoiname, report: report, species: species, species2: species2, sppcode: sppcode},
+		data: data,
 		dataType: "json",
 		success: function(data){ //alert(data);
             console.log(data);
