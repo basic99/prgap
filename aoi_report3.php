@@ -23,68 +23,60 @@ button {
 </style>
 <script language="javascript" type="text/javascript">
 /* <![CDATA[ */
-console.log("wtf");
 
-$(document).ready(function(){
+$(function() {
+  $("button").button();
+  $("#prnrep").click(function(evt) {
+         evt.preventDefault();
+			window.print();
+      });
+  $("#sprdsht").click(function(evt) {
+         evt.preventDefault();
+			spreadsheet();
+      });
+  $("#cls").click(function(evt) {
+         evt.preventDefault();
+			window.close();
+      });
 
-    console.log("hello world");
-    alert("wtf");
+	var aoiname = $('#aoiname').val();
+	var report = $('#report').val();
+	var species = $('#species').val();
+	var species2 = $('#species2').val();
+	var sppcode = $('#sppcode').val();
+
+    var data = { aoiname: aoiname, report: report, species: species, species2: species2, sppcode: sppcode};
+    console.log(data);
+
+	$.ajax({
+		type: "POST",
+		url: "aoi_report_ajax.php",
+		data: data,
+		dataType: "json",
+		success: function(data){ //alert(data);
+            console.log(data);
+			$('#somecontent').hide().html(data.rep).show("normal");
+		}
+	});
+
 });
 
-// $(function() {
-//   $("button").button();
-//   $("#prnrep").click(function(evt) {
-//          evt.preventDefault();
-// 			window.print();
-//       });
-//   $("#sprdsht").click(function(evt) {
-//          evt.preventDefault();
-// 			spreadsheet();
-//       });
-//   $("#cls").click(function(evt) {
-//          evt.preventDefault();
-// 			window.close();
-//       });
-
-// 	var aoiname = $('#aoiname').val();
-// 	var report = $('#report').val();
-// 	var species = $('#species').val();
-// 	var species2 = $('#species2').val();
-// 	var sppcode = $('#sppcode').val();
-
-//     var data = { aoiname: aoiname, report: report, species: species, species2: species2, sppcode: sppcode};
-//     console.log(data);
-//     alert(data);
-
-// 	$.ajax({
-// 		type: "POST",
-// 		url: "aoi_report_ajax.php",
-// 		data: data,
-// 		dataType: "json",
-// 		success: function(data){ //alert(data);
-//             console.log(data);
-// 			$('#somecontent').hide().html(data.rep).show("normal");
-// 		}
-// 	});
-
-// });
-
-// function spreadsheet(){
-// 	var pretag = document.getElementsByTagName("pre");
-// 	var content = pretag[0].innerHTML;
-// 	$.ajax({
-// 		type: "POST",
-// 		url: "aoi_report_ss.php",
-// 		data: { content: content },
-// 		dataType: "json",
-// 		success: function(data){
-// 			document.forms[0].action = "/server_temp/" + data.ssreport;
-// 			document.forms[0].submit();
-// 		}
-// 	});
+function spreadsheet(){
+	var pretag = document.getElementsByTagName("pre");
+	var content = pretag[0].innerHTML;
+	$.ajax({
+		type: "POST",
+		url: "aoi_report_ss.php",
+		data: { content: content },
+		dataType: "json",
+		success: function(data){
+			document.forms[0].action = "/server_temp/" + data.ssreport;
+			document.forms[0].submit();
+		}
+	});
 
 
-// }
+}
 
 
 /* ]]> */
