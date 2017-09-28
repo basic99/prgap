@@ -13,7 +13,7 @@
 @media print {
   #btncont {display: none; }
 }
-  
+
 .ui-widget {
   font-size: 11px;}
 button {
@@ -44,13 +44,14 @@ $(function() {
 	var species = $('#species').val();
 	var species2 = $('#species2').val();
 	var sppcode = $('#sppcode').val();
-	
+
 	$.ajax({
 		type: "POST",
 		url: "aoi_report_ajax.php",
 		data: { aoiname: aoiname, report: report, species: species, species2: species2, sppcode: sppcode},
 		dataType: "json",
 		success: function(data){ //alert(data);
+            console.log(data);
 			$('#somecontent').hide().html(data.rep).show("normal");
 		}
 	});

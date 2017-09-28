@@ -140,7 +140,8 @@ function functions_action(){
 }
 
 function lc_report(){
-   window.open("","report","toolbar=no, menubar=no, scrollbars");
+   // window.open("","report","toolbar=no, menubar=no, scrollbars");
+   window.open("","report","");
    parent.map.document.forms.fm2.target = 'report';
    parent.map.document.forms.fm2.report.value = 'landcover';
    parent.map.document.forms.fm2.submit();
