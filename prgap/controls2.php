@@ -46,6 +46,7 @@ var win_h = $(window).height();
 $("#tabs-1,#tabs-2,#tabs-3").height(win_h - 78);
 
 $("#lc").click(function(evt) {
+   alert("...");
    evt.preventDefault();
    lc_report();
 });
@@ -72,7 +73,7 @@ $("#selsp").click(function(evt) {
 </head>
 <body>
 <div id="tabs">
-	
+
 <ul>
 <li><a href="#tabs-1">View Layers</a></li>
 <li><a id="opentab" href="#tabs-2">AOI Info</a></li>
