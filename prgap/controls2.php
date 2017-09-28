@@ -46,7 +46,6 @@ var win_h = $(window).height();
 $("#tabs-1,#tabs-2,#tabs-3").height(win_h - 78);
 
 $("#lc").click(function(evt) {
-   alert("...");
    evt.preventDefault();
    lc_report();
 });
