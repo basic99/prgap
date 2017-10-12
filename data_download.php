@@ -153,7 +153,7 @@ $extent_save = $min_x.":".$min_y.":".$max_x.":".$max_y;
 if(!extension_loaded('MapScript')) {
 	dl("php_mapscript.so");
 }
-$mapfile = "prgap.map";
+$mapfile = "/var/www/html/prgap/prgap.map";
 
 // draw elevation and states layers
 $map = ms_newMapObj($mapfile);
