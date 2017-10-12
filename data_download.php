@@ -37,7 +37,7 @@ $(document).ready(function() {
 	// check_pd();
 	 $("#b01").click(function(evt) {
          evt.preventDefault();
-	    document.forms[0].reset(); 
+	    document.forms[0].reset();
       });
 	 $("#b02").click(function(evt) {
          evt.preventDefault();
@@ -92,7 +92,7 @@ function poll(){
         var previous = document.forms[0].pds.value;
    }
 
-   
+
 	document.forms[0].strpds.value = previous;
 }
 /* ]]> */
@@ -116,8 +116,16 @@ $richness_map = $_POST['richness_map'];
 $search = $_POST['search'];
 
 $richness_species_txt = '';
+ini_set("error_log", "/var/www/html/prgap/logs/php-error.log");
+ini_set("display_errors", 0);
+error_log("data download php");
+
 
 //var_dump($_POST);
+foreach ($_POST as $key => $value) {
+  error_log($key);
+  error_log($value);
+}
 
 //get range and aoi instances
 $rclass = $_SESSION["range".$aoi_name];
@@ -191,7 +199,7 @@ $mapimage->saveImage($maploc);
 <?php
 if (!empty($richness_map)) {
 	$richness_export = $pr_aoi_class->richnessexport($richness_map);
-?>	
+?>
 
 <tr>
 <td><input type="checkbox" checked="checked" name="richness" /></td><td>richness map</td>
