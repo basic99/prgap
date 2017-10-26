@@ -1,7 +1,8 @@
 
 <?php
 //set mapfile and load mapscript if not already loaded
-$mapfile = "../prgap.map";
+// $mapfile = "../prgap.map";
+$mapfile = "/var/www/html/prgap/prgap.map";
 require('pr_config.php');
 pg_connect($pg_connect);
 
@@ -173,6 +174,6 @@ if(preg_match("/lcov2/", $query_layer)){
 	//$msg = $x;
 }
 
-echo json_encode(array("result"=>$msg)); 
+echo json_encode(array("result"=>$msg));
 ?>
 
