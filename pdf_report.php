@@ -6,6 +6,8 @@ set_time_limit(300);
 
 //set mapfile and load mapscript if not already loaded
 $mapfile = "prgap.map";
+$mapfile = "/var/www/html/prgap/prgap.map";
+
 
 pg_connect($pg_connect);
 //var_dump($_POST);
@@ -137,7 +139,7 @@ if(preg_match("/range/", $species_layer)){
 	$this_layer = $map->getLayerByName('range');
 	$this_layer->set('classitem', strtolower($sppcode));
 	$this_layer->set('status', MS_ON);
-	$this_layer->set('opacity', 50);	
+	$this_layer->set('opacity', 50);
 }
 
 if(preg_match("/habitat|ownership|status|manage|richness/", $species_layer)){
@@ -315,7 +317,7 @@ if(preg_match("/lcov2/", $layer)   && (strlen($species_layer) == 0))
 	$pdf->AddPage();
 	$pdf->Cell(0,0,'General Land Cover',0,0);
 	$pdf->Image('/var/www/html/graphics/prgap/pr_simple_lcov.png',0.5,1.25,2.5,0);
-	
+
 }
 
 if(preg_match("/management/", $layer) || preg_match("/manage/", $species_layer) ){
