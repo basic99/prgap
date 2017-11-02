@@ -87,6 +87,15 @@ MAP
   END
 
   SYMBOL
+    NAME "line-horizontal"
+    TYPE vector
+    POINTS
+    0 0.5
+    1 0.5
+    END
+  END
+
+  SYMBOL
     NAME 'hatch-pattern'
     TYPE  vector
     POINTS
@@ -367,17 +376,15 @@ MAP
       EXPRESSION "1"
 	  	STYLE
         OUTLINECOLOR 3 38 92
-       # COLOR  3 38 92
-      #  opacity 0.5
         WIDTH 2
       END
-     #  STYLE
-	   #	  SYMBOL 'hatch-lines'
-	   #	  COLOR  3 38 92
+       STYLE
+	   	  SYMBOL "line-horizontal"
+	   	  COLOR  3 38 92
       #   ANGLE 60
-      #   SIZE 10
-      #   WIDTH 1
-     #  END
+         SIZE 10
+         WIDTH 1
+       END
 
     END
     CLASS
