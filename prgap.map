@@ -367,6 +367,8 @@ MAP
       EXPRESSION "1"
 	  	STYLE
         OUTLINECOLOR 3 38 92
+        COLOR  3 38 92
+        opacity 0.5
         WIDTH 1
       END
      #  STYLE
