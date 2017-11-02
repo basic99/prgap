@@ -91,7 +91,7 @@ MAP
     TYPE vector
     POINTS
     0 0.5
-    1 0.5
+    1 1
     END
   END
 
