@@ -367,9 +367,9 @@ MAP
       EXPRESSION "1"
 	  	STYLE
         OUTLINECOLOR 3 38 92
-        COLOR  3 38 92
+       # COLOR  3 38 92
       #  opacity 0.5
-        WIDTH 1
+        WIDTH 2
       END
      #  STYLE
 	   #	  SYMBOL 'hatch-lines'
@@ -385,7 +385,7 @@ MAP
       EXPRESSION "2"
 	  	STYLE
         OUTLINECOLOR 47 92 149
-        WIDTH 1
+        WIDTH 2
       END
     #   STYLE
 	   #	  SYMBOL 'hatch-lines'
@@ -400,7 +400,7 @@ MAP
       EXPRESSION "3"
 	  	STYLE
         OUTLINECOLOR 60 131 237
-        WIDTH 1
+        WIDTH 2
       END
     #   STYLE
 	  # 	  SYMBOL 'hatch-lines'
