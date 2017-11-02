@@ -87,11 +87,11 @@ MAP
   END
 
   SYMBOL
-    NAME "line-horizontal"
+    NAME "hatch-custom"
     TYPE vector
     POINTS
-    0 0.5
-    1 0.5
+    1 0
+    0 1
     END
   END
 
@@ -379,7 +379,7 @@ MAP
         WIDTH 2
       END
        STYLE
-	   	  SYMBOL "line-horizontal"
+	   	  SYMBOL "hatch-custom"
 	   	  COLOR  3 38 92
       #   ANGLE 60
          SIZE 10
@@ -394,13 +394,13 @@ MAP
         OUTLINECOLOR 47 92 149
         WIDTH 2
       END
-    #   STYLE
-	   #	  SYMBOL 'hatch-lines'
-	   #	  COLOR     47 92 149
+       STYLE
+	   	  SYMBOL 'hatch-custom'
+	   	  COLOR     47 92 149
      #    ANGLE 60
-     #    SIZE 10
-      #   WIDTH 1
-     #  END
+         SIZE 10
+         WIDTH 1
+       END
     END
     CLASS
       NAME "3-Permanent (intensive anthropogenic disturbance)"
@@ -409,13 +409,13 @@ MAP
         OUTLINECOLOR 60 131 237
         WIDTH 2
       END
-    #   STYLE
-	  # 	  SYMBOL 'hatch-lines'
-	   #	  COLOR   60 131 237
+       STYLE
+	   	  SYMBOL 'hatch-custom'
+	   	  COLOR   60 131 237
       #   ANGLE 60
-      #   SIZE 10
-      #   WIDTH 1
-     #  END
+         SIZE 10
+         WIDTH 1
+       END
     END
   END
     ###################################################################################
