@@ -290,7 +290,7 @@ if (isset($ecosys_aoi) && !empty($ecosys_aoi)){
 $mapname = "map".rand(0,9999999).".png";
 $maploc = "{$mspath}{$mapname}";
 $map->setSize($win_w, $win_h);
-errro_log("test");
+error_log("test");
 $map->zoompoint($zoom, $click_point, $win_w, $win_h, $old_extent);
 $mapimage = $map->draw();
 $mapimage->saveImage($maploc);
