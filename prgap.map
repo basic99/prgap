@@ -378,14 +378,7 @@ MAP
       #   SIZE 10
       #   WIDTH 1
      #  END
-      STYLE
-        SYMBOL "hatch-lines"
-        COLOR 0 0 0
-        SIZE 10
-        WIDTH 3
-        ANGLE 45
-        PATTERN 20 10 10 10 END
-      END
+
     END
     CLASS
       NAME "2-Permanent (suppressed natural processes)"
