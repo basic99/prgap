@@ -80,6 +80,7 @@ MAP
     STATUS ON
     COLOR -1 -1 -1
   END
+
   SYMBOL
     NAME 'hatch-lines'
     TYPE HATCH
@@ -368,13 +369,13 @@ MAP
         OUTLINECOLOR 3 38 92
         WIDTH 1
       END
-      STYLE
-	  	  SYMBOL 'hatch-lines'
-	  	  COLOR  3 38 92
-        ANGLE 60
-        SIZE 10
-        WIDTH 1
-      END
+     #  STYLE
+	   #	  SYMBOL 'hatch-lines'
+	   #	  COLOR  3 38 92
+      #   ANGLE 60
+      #   SIZE 10
+      #   WIDTH 1
+     #  END
     END
     CLASS
       NAME "2-Permanent (suppressed natural processes)"
@@ -383,13 +384,13 @@ MAP
         OUTLINECOLOR 47 92 149
         WIDTH 1
       END
-      STYLE
-	  	  SYMBOL 'hatch-lines'
-	  	  COLOR     47 92 149
-        ANGLE 60
-        SIZE 10
-        WIDTH 1
-      END
+    #   STYLE
+	   #	  SYMBOL 'hatch-lines'
+	   #	  COLOR     47 92 149
+     #    ANGLE 60
+     #    SIZE 10
+      #   WIDTH 1
+     #  END
     END
     CLASS
       NAME "3-Permanent (intensive anthropogenic disturbance)"
@@ -398,13 +399,13 @@ MAP
         OUTLINECOLOR 60 131 237
         WIDTH 1
       END
-      STYLE
-	  	  SYMBOL 'hatch-lines'
-	  	  COLOR   60 131 237
-        ANGLE 60
-        SIZE 10
-        WIDTH 1
-      END
+    #   STYLE
+	  # 	  SYMBOL 'hatch-lines'
+	   #	  COLOR   60 131 237
+      #   ANGLE 60
+      #   SIZE 10
+      #   WIDTH 1
+     #  END
     END
   END
     ###################################################################################
