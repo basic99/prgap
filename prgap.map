@@ -81,17 +81,17 @@ MAP
     COLOR -1 -1 -1
   END
 
-  #SYMBOL
-  #  NAME 'hatch-custom'
-  #  TYPE HATCH
- # END
+  SYMBOL
+    NAME 'hatch-lines'
+    TYPE HATCH
+  END
 
   SYMBOL
-    NAME "hatch-custom"
+    NAME "line-horizontal"
     TYPE vector
     POINTS
-    0 1
-    1 0
+    0 0.5
+    1 0.5
     END
   END
 
@@ -202,7 +202,7 @@ MAP
       NAME "historical excluded"
       EXPRESSION "5"
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
 	  	COLOR 120 120 120
         ANGLE 60
         SIZE 10
@@ -352,7 +352,7 @@ MAP
     TYPE POLYGON
     CLASS
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
 	  	COLOR 120 120 120
         SIZE 10
         OUTLINECOLOR 120 120 120
@@ -394,13 +394,13 @@ MAP
         OUTLINECOLOR 47 92 149
         WIDTH 2
       END
-       STYLE
-	   	  SYMBOL "line-horizontal"
-	   	  COLOR     47 92 149
+    #   STYLE
+	   #	  SYMBOL 'hatch-lines'
+	   #	  COLOR     47 92 149
      #    ANGLE 60
-         SIZE 10
-         WIDTH 1
-       END
+     #    SIZE 10
+      #   WIDTH 1
+     #  END
     END
     CLASS
       NAME "3-Permanent (intensive anthropogenic disturbance)"
@@ -409,13 +409,13 @@ MAP
         OUTLINECOLOR 60 131 237
         WIDTH 2
       END
-       STYLE
-	   	  SYMBOL "line-horizontal"
-	   	  COLOR   60 131 237
+    #   STYLE
+	  # 	  SYMBOL 'hatch-lines'
+	   #	  COLOR   60 131 237
       #   ANGLE 60
-         SIZE 10
-         WIDTH 1
-       END
+      #   SIZE 10
+      #   WIDTH 1
+     #  END
     END
   END
     ###################################################################################
@@ -437,7 +437,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR 163 96 43
         ANGLE 60
         SIZE 10
@@ -452,7 +452,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  170 255 160
         ANGLE 60
         SIZE 10
@@ -467,7 +467,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  120 120 120
         ANGLE 60
         SIZE 10
@@ -482,7 +482,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  120 120 120
         ANGLE 60
         SIZE 10
@@ -497,7 +497,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  65 104 0
         ANGLE 60
         SIZE 10
@@ -512,7 +512,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  179 227 238
         ANGLE 60
         SIZE 10
@@ -527,7 +527,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  90 130 90
         ANGLE 60
         SIZE 10
@@ -542,7 +542,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  145 145 0
         ANGLE 60
         SIZE 10
@@ -557,7 +557,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  170 35 50
         ANGLE 60
         SIZE 10
@@ -572,7 +572,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  177 225 17
         ANGLE 60
         SIZE 10
@@ -587,7 +587,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  177 225 17
         ANGLE 60
         SIZE 10
@@ -602,7 +602,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  177 225 17
         ANGLE 60
         SIZE 10
@@ -617,7 +617,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  177 225 17
         ANGLE 60
         SIZE 10
@@ -632,7 +632,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  177 225 17
         ANGLE 60
         SIZE 10
@@ -647,7 +647,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  177 225 17
         ANGLE 60
         SIZE 10
@@ -662,7 +662,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  177 225 17
         ANGLE 60
         SIZE 10
@@ -677,7 +677,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  255 165 165
         ANGLE 60
         SIZE 10
@@ -692,7 +692,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  255 165 165
         ANGLE 60
         SIZE 10
@@ -707,7 +707,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  255 165 165
         ANGLE 60
         SIZE 10
@@ -722,7 +722,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  0 0 0
         ANGLE 60
         SIZE 10
@@ -749,7 +749,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   168 103 49
         ANGLE 60
         SIZE 10
@@ -764,7 +764,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR  160 255 160
         ANGLE 60
         SIZE 10
@@ -779,7 +779,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   120 120 120
         ANGLE 60
         SIZE 10
@@ -794,7 +794,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   53 105 5
         ANGLE 60
         SIZE 10
@@ -809,7 +809,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   0 0 255
         ANGLE 60
         SIZE 10
@@ -824,7 +824,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   179 227 238
         ANGLE 60
         SIZE 10
@@ -839,7 +839,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   95 130 95
         ANGLE 60
         SIZE 10
@@ -854,7 +854,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   151 144 0
         ANGLE 60
         SIZE 10
@@ -869,7 +869,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   177 31 44
         ANGLE 60
         SIZE 10
@@ -884,7 +884,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   177 31 44
         ANGLE 60
         SIZE 10
@@ -899,7 +899,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   166 228 33
         ANGLE 60
         SIZE 10
@@ -914,7 +914,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   166 228 33
         ANGLE 60
         SIZE 10
@@ -929,7 +929,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   255 160 160
         ANGLE 60
         SIZE 10
@@ -944,7 +944,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   255 160 160
         ANGLE 60
         SIZE 10
@@ -959,7 +959,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   255 160 160
         ANGLE 60
         SIZE 10
@@ -974,7 +974,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   255 160 160
         ANGLE 60
         SIZE 10
@@ -989,7 +989,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   255 160 160
         ANGLE 60
         SIZE 10
@@ -1004,7 +1004,7 @@ MAP
         WIDTH 1
       END
       STYLE
-        SYMBOL 'hatch-custom'
+        SYMBOL 'hatch-lines'
         COLOR   0 0 0
         ANGLE 60
         SIZE 10
@@ -1024,7 +1024,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
@@ -1046,7 +1046,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
@@ -1068,7 +1068,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
@@ -1090,7 +1090,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
@@ -1112,7 +1112,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
@@ -1134,7 +1134,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
@@ -1156,7 +1156,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
@@ -1178,7 +1178,7 @@ MAP
     TRANSPARENCY alpha
     CLASS
       STYLE
-	  	SYMBOL 'hatch-custom'
+	  	SYMBOL 'hatch-lines'
 	  	COLOR 255 0 0
         ANGLE 60
         SIZE 10
