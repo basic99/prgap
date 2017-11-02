@@ -394,13 +394,13 @@ MAP
         OUTLINECOLOR 47 92 149
         WIDTH 2
       END
-    #   STYLE
-	   #	  SYMBOL 'hatch-lines'
-	   #	  COLOR     47 92 149
+       STYLE
+	   	  SYMBOL "line-horizontal"
+	   	  COLOR     47 92 149
      #    ANGLE 60
-     #    SIZE 10
-      #   WIDTH 1
-     #  END
+         SIZE 10
+         WIDTH 1
+       END
     END
     CLASS
       NAME "3-Permanent (intensive anthropogenic disturbance)"
@@ -409,13 +409,13 @@ MAP
         OUTLINECOLOR 60 131 237
         WIDTH 2
       END
-    #   STYLE
-	  # 	  SYMBOL 'hatch-lines'
-	   #	  COLOR   60 131 237
+       STYLE
+	   	  SYMBOL "line-horizontal"
+	   	  COLOR   60 131 237
       #   ANGLE 60
-      #   SIZE 10
-      #   WIDTH 1
-     #  END
+         SIZE 10
+         WIDTH 1
+       END
     END
   END
     ###################################################################################
