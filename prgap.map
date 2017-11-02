@@ -6,6 +6,8 @@ MAP
   FONTSET '/var/www/html/ncgap/myfonts.txt'
   #FONTSET '/var/www/html/ncgap/fontset.txt'
   DEBUG 5
+  CONFIG "CPL_DEBUG" "ON"
+   CONFIG "PROJ_DEBUG" "ON"
   CONFIG "MS_ERRORFILE" "/pub/weblogs/prgap_error_log.txt"
  CONFIG PROJ_LIB "/usr/local/share/proj/"
 
